@@ -1,6 +1,5 @@
 import { createWebHistory } from 'vue-router'
-import About from '@/views/AboutView.vue'
-
+import About from '@/presentaion/pages/AboutView.vue'
 const config = {
     routes: [
         {path:'/about', component : About }
