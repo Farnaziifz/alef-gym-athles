@@ -48,7 +48,7 @@ const handleInput = () => {
       :type="type"
       :placeholder="placeholder"
       :class="[
-        'w-full p-2.5 bg-none outline-none',
+        'w-full p-2.5 bg-transparent outline-none',
         inputClass,
         isInvalid ? 'border-red-500' : 'border-gray-300'
       ]"

@@ -7,7 +7,7 @@ module.exports = {
       primary: '#0C3B2E',
       secondary: '#FFBA00',
       white: '#ffffff',
-      // transparent: 'transparent'
+      transparent: 'transparent'
     },
     container: {
       center: true,
