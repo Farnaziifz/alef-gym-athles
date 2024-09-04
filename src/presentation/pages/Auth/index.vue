@@ -1,1 +1,3 @@
-<template>auth</template>
+<template>
+  <RouterView />
+</template>
