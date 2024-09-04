@@ -1,5 +1,5 @@
 /* eslint-env node */
-require('@rushstack/eslint-patch/modern-module-resolution')
+require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
   root: true,
@@ -25,7 +25,13 @@ module.exports = {
   },
   rules: {
     // General Best Practices
-    semi: ['error', 'always'], // Enforce semicolons
+    semi: ['error', 'always'], // Ensures semicolons are always added
+    'prettier/prettier': [
+      'error',
+      {
+        semi: true // Ensures semicolons are always added in Prettier as well
+      }
+    ],
     quotes: ['error', 'single'], // Enforce single quotes
     eqeqeq: ['error', 'always'], // Enforce strict equality checks
     curly: ['error', 'all'], // Enforce consistent brace style for all control statements
@@ -45,6 +51,9 @@ module.exports = {
     '@typescript-eslint/no-inferrable-types': 'error', // Disallow explicit type declarations for variables that can be inferred
     '@typescript-eslint/strict-boolean-expressions': 'error', // Enforce strict rules for boolean expressions
     '@typescript-eslint/explicit-module-boundary-types': 'error', // Require explicit return and argument types on exported functions and classes
+
+    // Disable specific rule
+    '@typescript-eslint/no-unsafe-assignment': 'off', // Disable unsafe assignment of error-typed values
 
     // Vue Specific Rules
     'vue/no-v-html': 'error', // Disallow use of v-html to prevent XSS attack
@@ -72,7 +81,6 @@ module.exports = {
       {
         singleQuote: true,
         semi: true,
-        trailingComma: 'es5',
         printWidth: 100
       }
     ]
@@ -97,4 +105,4 @@ module.exports = {
     }
   ],
   ignorePatterns: ['node_modules/', 'dist/', 'build/', '*.config.js'] // Ignore common directories and config files
-}
+};

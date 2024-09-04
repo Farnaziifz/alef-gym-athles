@@ -1,11 +1,18 @@
-import { createWebHistory } from 'vue-router'
-import About from '@/presentation/pages/AboutView.vue'
-const config = {
-    routes: [
-        {path:'/about', component : About }
-       
-    ],
-    history: createWebHistory()
-}
+import { createWebHistory, RouterOptions } from 'vue-router';
+import { AuthRouterConfig } from './Modules/auth.config';
+import Main from '@/presentation/pages/Main.vue';
 
-export default config
+const config: RouterOptions = {
+  routes: [
+    {
+      path: '/',
+      name: 'Main',
+      component: Main,
+      redirect: '/auth/login',
+      children: [AuthRouterConfig]
+    }
+  ],
+  history: createWebHistory(import.meta.env.BASE_URL)
+};
+
+export default config;
