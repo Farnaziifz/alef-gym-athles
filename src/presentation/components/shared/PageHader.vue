@@ -7,9 +7,12 @@ const props = defineProps<PageHeaderProps>();
 </script>
 
 <template>
-  <div class="h-[400px] relative">
+  <div class="h-[400px] relative w-full">
     <img :src="props.img" alt="" class="w-full h-full object-cover" />
     <div class="gradient w-full h-full absolute bottom-0"></div>
+    <div class="absolute bottom-[40px] container">
+      <slot name="text-header"></slot>
+    </div>
   </div>
 </template>
 

@@ -19,12 +19,13 @@ const buttonClassess = computed(() => {
   }
   clasess.push(`rounded rounded-[${props.rounded}]`);
 
-  const test = clasess.join(' ');
-  console.log(test);
-  return test;
+  const joinClass = clasess.join(' ');
+  return joinClass;
 });
 </script>
 
 <template>
-  <button :class="buttonClassess" class="w-full py-4">{{ props.text }}</button>
+  <button :class="buttonClassess" class="w-full py-4 bg-secondary rounded rounded-[30px]">
+    {{ props.text }}
+  </button>
 </template>

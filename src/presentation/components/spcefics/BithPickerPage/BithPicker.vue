@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
 
-const years = Array.from({ length: 40 }, (_, i) => 1340 + i);
+const years = Array.from({ length: 60 }, (_, i) => 1340 + i);
 const months = [
   'فروردین',
   'اردیبهشت',
@@ -48,6 +48,7 @@ const smoothScrollTo = (element: HTMLElement, targetPosition: number, duration: 
   };
 
   window.requestAnimationFrame(step);
+  console.log(selectedMonth.value);
 };
 
 const handleScroll = (
@@ -79,17 +80,13 @@ onMounted(() => {
   monthColumn.value!.scrollTop = months.indexOf(selectedMonth.value) * itemHeight;
   dayColumn.value!.scrollTop = days.indexOf(selectedDay.value) * itemHeight;
 });
-
-const checkDate = () => {
-  console.log('سال انتخاب‌شده:', selectedYear.value);
-  console.log('ماه انتخاب‌شده:', selectedMonth.value);
-  console.log('روز انتخاب‌شده:', selectedDay.value);
-};
 </script>
 
 <template>
-  <div class="date-picker flex justify-center p-4">
-    <div class="relative gap-4 flex">
+  <div
+    class="date-picker flex justify-center p-4 bg-secondaryGreen bg-opacity-20 rounded rounded-[30px]"
+  >
+    <div class="relative gap-8 flex">
       <div
         class="relative w-20 h-40 overflow-y-scroll text-center my-scroll"
         @scroll="(e) => handleYearScroll(e)"
@@ -111,15 +108,14 @@ const checkDate = () => {
         @scroll="(e) => handleDayScroll(e)"
       >
         <div ref="dayColumn" class="py-[60px]">
-          <div v-for="day in days" :key="day" class="picker-item">{{ day }}</div>
+          <div v-for="day in days" :key="day" class="picker-item z-10">{{ day }}</div>
         </div>
       </div>
       <div
-        class="highlight absolute top-[50%] left-0 right-0 h-10 mt-[-20px] bg-secondaryGreen bg-opacity-20 z-10 rounded rounded-2xl"
+        class="highlight absolute top-[50%] left-0 right-0 h-12 mt-[-20px] bg-primary bg-opacity-40 z-0 rounded rounded-2xl"
       ></div>
     </div>
   </div>
-  <button @click="checkDate">final</button>
 </template>
 
 <style scoped>
@@ -138,7 +134,6 @@ const checkDate = () => {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 .my-scroll {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
