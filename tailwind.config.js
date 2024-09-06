@@ -7,7 +7,8 @@ module.exports = {
       primary: '#0C3B2E',
       secondary: '#FFBA00',
       white: '#ffffff',
-      transparent: 'transparent'
+      transparent: 'transparent',
+      secondaryGreen: '#6D9773'
     },
     container: {
       center: true,

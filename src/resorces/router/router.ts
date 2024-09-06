@@ -1,5 +1,6 @@
 import { createWebHistory, RouterOptions } from 'vue-router';
 import { AuthRouterConfig } from './Modules/auth.config';
+import { InfoRouterConfig } from './Modules/Info.config';
 import Main from '@/presentation/pages/Main.vue';
 
 const config: RouterOptions = {
@@ -9,7 +10,7 @@ const config: RouterOptions = {
       name: 'Main',
       component: Main,
       redirect: '/auth/login',
-      children: [AuthRouterConfig]
+      children: [AuthRouterConfig, InfoRouterConfig]
     }
   ],
   history: createWebHistory(import.meta.env.BASE_URL)
