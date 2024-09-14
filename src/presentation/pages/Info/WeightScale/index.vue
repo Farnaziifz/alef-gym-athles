@@ -5,13 +5,15 @@ import Weight from '@/presentation/components/spcefics/WeightScale/Weight.vue';
 </script>
 
 <template>
-  <PageHader :img="LoginBanner">
-    <template #text-header>
-      <p class="text-white text-xl font-[dana-bold] text-center">
-        <span class="text-secondary font-[dana-bold]">وزن</span> <span> </span>
-        <span>خودت رو وارد کن</span>
-      </p>
-    </template>
-  </PageHader>
-  <Weight />
+  <div class="h-screen">
+    <PageHader :img="LoginBanner">
+      <template #text-header>
+        <p class="text-white text-xl font-[dana-bold] text-center">
+          <span class="text-secondary font-[dana-bold]">وزن</span> <span> </span>
+          <span>خودت رو وارد کن</span>
+        </p>
+      </template>
+    </PageHader>
+    <Weight />
+  </div>
 </template>

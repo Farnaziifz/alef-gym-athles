@@ -4,7 +4,7 @@
 
     <div class="text-4xl font-bold">{{ weight.toFixed(1) }} KG</div>
 
-    <img src="../../../../assets/images/shapes/weight.png" alt="" class="w-full mt-5 h-[300px]" />
+    <img src="../../../../assets/images/shapes/weight.png" alt="" class="w-full mt-5 h-[250px]" />
 
     <div class="w-64 h-64 flex items-center justify-center absolute">
       <!-- Gauge Circle -->
